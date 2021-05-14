@@ -1,12 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 // import { ImportBox, Title, WrapperFlex } from "componentes-lib";
 
 import { ImportBox } from "../components/ImportBox";
 import { Title } from "../components/Title";
 import { WrapperFlex } from "../components/WrapperFlex";
+import { randomAPI } from "../services/api";
 
 function ArquivoImportacao({ onClick, text, alert }) {
   const [files, setFiles] = useState([]);
+
+  useEffect(() => {
+    randomAPI.get("pokemon/ditto");
+  }, []);
 
   return (
     <WrapperFlex justifyCenter column>
