@@ -1,17 +1,25 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import AppWebComponent from "./utils/ToWebComponent";
+import AppShadowComponent from "./utils/ToShadowComponent";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+window.customElements.define(
+  "formulario-entrega-custom-component",
+  AppWebComponent
+);
+window.customElements.define(
+  "formulario-entrega-shadow-component",
+  AppShadowComponent
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// window.renderFormularioEntrega = (containerId) => {
+//   debugger;
+//   window.customElements.define('formulario-entrega-custom-component', AppWebComponent);
+//   window.customElements.define('formulario-entrega-shadow-component', AppShadowComponent);
+// };
+
+// window.unmountBrowse = (containerId) => {
+//   ReactDOM.unmountComponentAtNode(document.getElementById(containerId));
+// };

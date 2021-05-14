@@ -1,25 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Routes from "./routes";
+import { MemoryRouter  } from "react-router-dom";
+import NavbarSecondary from './components/NavbarSecondary';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MemoryRouter>
+      <NavbarSecondary />
+      <Routes />
+    </MemoryRouter>
   );
-}
+};
 
 export default App;
